@@ -189,10 +189,11 @@ p {
     box-shadow: var(--shadow-sm);
     z-index: 1000;
     transition: var(--transition);
+    padding: 1rem 0;
 }
 
 .logo img {
-    height: 48px;
+    height: 96px;
     width: auto;
 }
 
@@ -263,7 +264,7 @@ p {
     background: linear-gradient(135deg, var(--clr-primary) 0%, #005a7a 100%);
     color: var(--clr-white);
     padding: 8rem 0 6rem;
-    margin-top: 70px;
+    margin-top: 120px;
     position: relative;
     overflow: hidden;
 }
@@ -292,7 +293,7 @@ p {
     background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-secondary) 100%);
     color: var(--clr-white);
     padding: 6rem 0 4rem;
-    margin-top: 70px;
+    margin-top: 120px;
     position: relative;
     overflow: hidden;
 }
