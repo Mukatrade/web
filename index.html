@@ -446,11 +446,16 @@
             <div class="contact-grid">
                 <div class="contact-form-container">
                     <h3>Request Your Free Custom Quote</h3>
-                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
-                        <input type="text" name="name" placeholder="Full Name *" required>
-                        <input type="text" name="company" placeholder="Company Name" required>
-                        <input type="email" name="email" placeholder="Work Email *" required>
-                        <input type="tel" name="phone" placeholder="Phone Number" required>
+                    <form action="https://formspree.io/f/xzzejpzr" method="POST" class="contact-form">
+                        <div class="contact-form-row">
+                            <input type="text" name="name" placeholder="Full Name *" required>
+                            <input type="text" name="company" placeholder="Company Name" required>
+                        </div>
+
+                        <div class="contact-form-row">
+                            <input type="email" name="email" placeholder="Work Email *" required>
+                            <input type="tel" name="phone" placeholder="Phone Number" required>
+                        </div>
 
                         <select name="service_interest" required>
                             <option value="" disabled selected>Product Category/Region of Interest *</option>
@@ -460,6 +465,10 @@
                         </select>
 
                         <textarea name="message" rows="4" placeholder="Tell us about your specific needs..."></textarea>
+
+                        <input type="hidden" name="_subject" value="New Strategy Call Request from Muka Trade Website">
+                        <input type="hidden" name="_replyto" value="email">
+                        <input type="hidden" name="_cc" value="info@mukatrade.com">
 
                         <button type="submit" class="btn btn-primary">Claim My Free Strategy Call</button>
                     </form>

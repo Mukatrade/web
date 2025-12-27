@@ -279,6 +279,14 @@ p {
     opacity: 0.3;
 }
 
+/* Solutions Hero with Background Image */
+#services.hero {
+    background: linear-gradient(rgba(0, 48, 73, 0.85), rgba(0, 90, 122, 0.85)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23f0f0f0" width="1200" height="800"/><g opacity="0.3"><path fill="%23003049" d="M0 400L50 425L100 400L150 375L200 400L250 425L300 400L350 375L400 400L450 425L500 400L550 375L600 400L650 425L700 400L750 375L800 400L850 425L900 400L950 375L1000 400L1050 425L1100 400L1150 375L1200 400V800H0V400Z"/></g><g opacity="0.2"><circle cx="200" cy="200" r="80" fill="%23d62828"/><circle cx="800" cy="600" r="100" fill="%23f77f00"/></g></svg>');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
 /* Service Hero Section */
 .service-hero {
     background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-secondary) 100%);
@@ -667,6 +675,54 @@ p {
 .guarantee-item h4 {
     color: var(--clr-primary);
     margin-bottom: 0.5rem;
+}
+
+/* ==================== CONTACT FORM STYLING ==================== */
+.contact-form {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 700px;
+    margin: 2rem auto;
+}
+
+.contact-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+    background: var(--clr-white);
+    color: var(--clr-dark);
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--clr-primary);
+    box-shadow: 0 0 0 3px rgba(0, 48, 73, 0.1);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 140px;
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+    .contact-form-row {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ==================== CONTACT SECTION ==================== */
