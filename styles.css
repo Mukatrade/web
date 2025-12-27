@@ -395,9 +395,13 @@ p {
     padding: 2.5rem;
 }
 
+.solution-content h3 {
+    color: var(--clr-dark);
+}
+
 .solution-tagline {
     font-size: 1.1rem;
-    color: var(--clr-text-light);
+    color: var(--clr-dark);
     margin-bottom: 1.5rem;
     line-height: 1.5;
 }
@@ -412,6 +416,7 @@ p {
     align-items: flex-start;
     margin-bottom: 0.75rem;
     padding-left: 0;
+    color: var(--clr-dark);
 }
 
 .solution-benefits i {
