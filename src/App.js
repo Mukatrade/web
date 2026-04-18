@@ -1,4 +1,4 @@
-// App.jsx - Main React Component with Firebase + Google OAuth
+// App.js - Main React Component with Firebase + Google OAuth
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { initializeApp } from 'firebase/app';
@@ -22,11 +22,20 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const firestore = getFirestore(app);
 
-// Google Auth Provider
+// Set the proper redirect URI based on environment
+const getRedirectUri = () => {
+  if (window.location.hostname === 'localhost') {
+    return 'http://localhost:3000';
+  }
+  return 'https://mukatrade.com/dashboard';
+};
+
+// Google Auth Provider with redirect URI
 const googleProvider = new GoogleAuthProvider();
 googleProvider.setCustomParameters({
   hd: 'mukatrade.com',
-  prompt: 'select_account'
+  prompt: 'select_account',
+  redirect_uri: getRedirectUri()
 });
 
 export { auth, firestore, googleProvider };
@@ -102,10 +111,10 @@ function DashboardLayout({ user, children, onLogout }) {
       </header>
 
       <nav className="dashboard-nav">
-        <a href="/" className="nav-item">📈 Dashboard</a>
-        <a href="/tenders" className="nav-item">📋 All Tenders</a>
-        <a href="/sourcing" className="nav-item">🔍 Sourcing</a>
-        <a href="/settings" className="nav-item">⚙️ Settings</a>
+        <a href="/dashboard/" className="nav-item">📈 Dashboard</a>
+        <a href="/dashboard/tenders" className="nav-item">📋 All Tenders</a>
+        <a href="/dashboard/sourcing" className="nav-item">🔍 Sourcing</a>
+        <a href="/dashboard/settings" className="nav-item">⚙️ Settings</a>
       </nav>
 
       <main className="dashboard-main">
@@ -146,7 +155,7 @@ export default function App() {
   }
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/dashboard">
       <Routes>
         {!user ? (
           <Route path="*" element={<LoginPage onLoginSuccess={setUser} />} />
